@@ -1,13 +1,9 @@
 #include "../include/Numbers.hpp"
-//#include <cctype>
-//#include <algorithm>
 
 void Number::set_num(std::string input){
     num_str = input;
     pre_proc();
-    //it = num_str.end();
-    //it--;
-    //char_num = *it;
+    
     if(pos>0)
         pos = num_str.size() - 1;
     else{}
@@ -19,16 +15,11 @@ std::string Number::get_num() const{
 uint8_t Number::get_char_num(){
     return char_num; 
 }
-// std::string::iterator Number::get_it(){
-//     return it;
-// }
+
 size_t Number::get_pos(){
     return pos;
 }
-// void Number::dec_it(){
-//     it--;
-//     char_num = *it;
-// }
+
 void Number::dec_pos(){
     if(pos>0){
         pos--;
@@ -121,39 +112,3 @@ void Number::replace(Number &input){
     input.set_num(temp->get_num());
     delete temp;
 }
-
-// void Number::pre_proc(Number &input){
-//     bool flag = true;
-//     if(this->get_lenght() < input.get_lenght()){
-//         this->replace(input);
-//         flag = false;
-//     }
-//     else if(this->get_lenght() == input.get_lenght()){
-//         for(size_t size=0;size < this->get_lenght(); size++){
-//             if(this->get_num().at(size) == input.get_num().at(size))
-//                 continue;
-//             else if(this->get_num().at(size) < input.get_num().at(size)){
-//                 this->replace(input);
-//                 flag = false;
-//                 break;
-//                 }
-//             else
-//                 break;
-        
-//         }
-
-//     }
-//     else{
-//         flag = false;
-//     }
-
-//     // if(flag == false){
-//     //     std::string zero{""};
-//     //     for(size_t i = this->get_lenght() - input.get_lenght() ; i>0 ; i--){
-//     //         zero+="0";
-//     //         }
-//     // input.set_num(zero+input.get_num());
-//     // }
-    
-// }
-
